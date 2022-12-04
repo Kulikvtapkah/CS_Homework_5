@@ -37,15 +37,18 @@ int EnterLength()
     return (response);
 }
 
-
-
-int[] Array = RandArray(EnterLength());
+int ChetNum (int[] Arr)
+{
+int[] Array = Arr;
 
 int Sum = 0;
 for (int i = 0; i < Array.Length; i++)
 {
     if (Array[i] % 2 == 0) Sum++;
 }
+return (Sum);
+}
+
 
 System.Console.WriteLine();
-System.Console.Write($"Количество четных элементов массива = {Sum}.");
+System.Console.Write($"Количество четных элементов массива = {ChetNum (RandArray(EnterLength()))}.");

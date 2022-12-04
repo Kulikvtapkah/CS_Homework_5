@@ -68,15 +68,10 @@ while (rightInput == false)
 return (borders);
 }
 
-
-System.Console.WriteLine("Генерируем случайный массив. Поехали!"); 
-
-int[] Borders =  EnterBorders();
-int[] Array = RandArray(EnterLength(), Borders[0],  Borders[1]);
-
-
+string OddsSum (int[] Array)
+{
 if (Array.Length<2) 
-System.Console.Write(" В этом массиве нет нечетных позиций:(");
+return (" В этом массиве нет нечетных позиций:(");
 
 else
 {
@@ -87,7 +82,15 @@ for (int i = 3; i < Array.Length; i+=2)
      Sum2nd= Sum2nd+ Array[i];
 }
 
-System.Console.WriteLine();
-System.Console.Write($"Сумма элементов на нечетных позициях = {Sum2nd}.");
 
-}
+return($"Сумма элементов на нечетных позициях = {Sum2nd}.");
+
+}}
+
+System.Console.WriteLine("Генерируем случайный массив. Поехали!"); 
+
+int[] Borders =  EnterBorders();
+int[] Array = RandArray(EnterLength(), Borders[0],  Borders[1]);
+
+System.Console.WriteLine();
+System.Console.Write(OddsSum (Array));

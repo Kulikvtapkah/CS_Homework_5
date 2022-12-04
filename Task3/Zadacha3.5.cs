@@ -67,11 +67,8 @@ int[] EnterBorders()
     return (borders);
 }
 
-System.Console.WriteLine("Генерируем случайный массив. Поехали!");
-
-int[] Borders = EnterBorders();
-double[] Array = RandArray(EnterLength(), Borders[0], Borders[1]);
-
+double MinMaxDiff(double[] Array)
+{
 double CurrMin = Array[0];
 double CurrMax = Array[0];
 
@@ -82,6 +79,13 @@ for (int i = 1; i < Array.Length; i++)
     else
     if (Array[i] > CurrMax) CurrMax = Array[i];
 }
+return (CurrMax - CurrMin);
+}
+
+System.Console.WriteLine("Генерируем случайный массив. Поехали!");
+
+int[] Borders = EnterBorders();
+double[] Array = RandArray(EnterLength(), Borders[0], Borders[1]);
 
 System.Console.WriteLine();
-System.Console.Write($"Разница между максимальным и минимальным элементом массива = {CurrMax - CurrMin}.");
+System.Console.Write($"Разница между максимальным и минимальным элементом массива = {MinMaxDiff(Array)}.");
